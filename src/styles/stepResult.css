@@ -1,0 +1,33 @@
+.result {
+	width: 700px !important;
+}
+
+.converted-image {
+	width: 120px;
+	border-radius: 15px;
+}
+.converted-image:hover {
+	cursor: pointer;
+}
+.converted-image img {
+	border-radius: 15px;
+	height: 80px;
+	width: 120px;
+}
+.converted-image img.active {
+	border: 3px solid #3995CC;
+}
+
+.converted-image img.disabled {
+	border: 3px solid red;
+}
+
+.uploaded-image {
+	max-height: 400px;
+	overflow-y: auto;
+}
+
+.pics-row {
+	max-height: 400px;
+	overflow-y: auto;
+}

@@ -1,0 +1,40 @@
+# cloudbuild.yaml
+
+
+steps:
+  - name: "gcr.io/cloud-builders/gcloud"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        # Fetch SSH key from Secret Manager
+        gcloud secrets versions access latest --secret=${_SECRET_MANAGER_SECRET_NAME} > /workspace/ssh_key
+        gcloud secrets versions access latest --secret=${_SECRET_MANAGER_SECRET_NAME_1} > /workspace/ssh_key_1
+
+
+        # Set correct permissions on the private key file
+        chmod 600 /workspace/ssh_key
+        chmod 600 /workspace/ssh_key_1
+
+  - name: "gcr.io/cloud-builders/gcloud"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        # Disable strict host key checking and SSH into the VM using its IP address
+        if [ "${BRANCH_NAME}" == "main" ]; then
+          echo "Running steps for main branch..."
+          # Add main branch-specific steps here
+          ssh -o StrictHostKeyChecking=no -i /workspace/ssh_key_1 ${_SSH_USERNAME}@${_VM_INSTANCE_IP_1}  "${_SCRIPT_PATH_MAIN}"
+        elif [ "${BRANCH_NAME}" == "staging" ]; then
+          echo "Running steps for staging branch..."
+          # Add qa branch-specific steps here
+          ssh -o StrictHostKeyChecking=no -i /workspace/ssh_key ${_SSH_USERNAME}@${_VM_INSTANCE_IP}  "${_SCRIPT_PATH_STAGING}"
+        elif [ "${BRANCH_NAME}" == "dev" ]; then
+          echo "Running steps for dev branch..."
+          # Add qa branch-specific steps here
+          ssh -o StrictHostKeyChecking=no -i /workspace/ssh_key ${_SSH_USERNAME}@${_VM_INSTANCE_IP}  "${_SCRIPT_PATH_DEV}"
+        fi
+
+options:
+  logging: CLOUD_LOGGING_ONLY

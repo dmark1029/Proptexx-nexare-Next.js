@@ -1,0 +1,21 @@
+.preview-modal {
+	padding: 0 !important;
+}
+
+.modal-header {
+	height: 115px;
+	background-color: #3995CC;
+	width: 100%;
+	border-top-left-radius: 36px;
+	border-top-right-radius: 36px;
+}
+
+.description .buyer {
+	font-size: 42px;
+	font-family: 'Roboto';
+	line-height: normal;
+}
+
+.progress {
+	color: #3995cc;
+}

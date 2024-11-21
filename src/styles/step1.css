@@ -1,0 +1,151 @@
+.table-header {
+	display: flex;
+	align-items: center;
+}
+
+
+
+.pics-box,
+.selected-image {
+	cursor: pointer;
+	border: 2px solid #E7F2F8;
+	border-radius: 10px;
+}
+
+.selected-image.active {
+	border: 2px solid #3995CC;
+}
+
+.no-hover {
+	cursor: not-allowed;
+	border: 2px solid #E7F2F8;
+	border-radius: 10px;
+}
+
+.selected-image img {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+}
+
+.pics-box img {
+	display: none;
+	scale: 1.1;
+}
+
+.pics-box:hover,
+.pics-box.hover {
+	background: #e7fef8;
+	border: 2px solid #3995CC;
+}
+
+.no-hover:hover {
+	background: white;
+	border: 2px solid #E7F2F8;
+}
+
+.pics-box:hover img,
+.pics-box img.hover {
+	display: block;
+}
+
+.coming-soon-badge {
+	width: 90px;
+	height: 20px;
+	top: -10px;
+}
+
+.new-badge {
+	width: 42px;
+	height: 20px;
+	top: -10px;
+}
+
+.preview {
+	border-radius: 25px;
+}
+
+.title {
+	font-size: 35px;
+	font-family: 'Roboto';
+	font-weight: bold;
+}
+
+.modal-title {
+	font-size: 35px;
+	font-family: 'Roboto';
+	font-weight: bold;
+	text-align: center;
+}
+
+.modal-description {
+	font-size: 16px;
+	font-family: 'Roboto';
+	text-align: center;
+}
+
+.modal-body {
+	width: 972px;
+	height: 347px;
+}
+
+.menu-item {
+	width: 350px;
+	height: 91px;
+	padding: 5px 0 0 !important;
+}
+
+.MuiMenu-list {
+	padding: 0 !important;
+}
+
+.dropdown-menu {
+	width: 392px;
+	height: 60px;
+}
+
+.preview-modal {
+	padding: 0 !important;
+}
+
+.modal-header {
+	height: 115px;
+	background-color: #3995CC;
+	width: 100%;
+	border-top-left-radius: 36px;
+	border-top-right-radius: 36px;
+}
+
+.description .buyer {
+	font-family: 'Roboto';
+	line-height: normal;
+}
+
+.progress {
+	color: #3995cc;
+}
+
+.credits-result {
+	width: 350px;
+	height: 30px;
+	background: #B8FFDF;
+	position: relative;
+	border-radius: 8px;
+}
+.credits-result p {
+	right: 5px;
+	font-size: 16px;
+	top: 8px;
+}
+
+.used {
+	width: 30px;
+	height: 18px;
+	background: #3995CC;
+}
+
+.left {
+	width: 30px;
+	height: 18px;
+	background: #e7fef8;
+}

@@ -1,0 +1,38 @@
+.bg-ilist {
+    background: #3191cf;
+}
+
+.bg-exp {
+    background: #224ea1;
+}
+
+.bg-c21 {
+    background: #a78c57;
+}
+
+.bg-cb {
+    background: #142667;
+}
+
+.bg-kwcp {
+    background: #b31f24;
+}
+
+.bg-realsmart {
+    background: #d91a32;
+}
+
+.bg-realty {
+    background: #222222;
+}
+
+.bg-default {
+    background: #cb85ff;
+}
+
+.example-gallery {
+    color: white !important;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
