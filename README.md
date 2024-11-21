@@ -1,1 +1,1 @@
-# Proptexx-nexare-Next.js
+# Proptexx-nexare-frontend (Next.js)
